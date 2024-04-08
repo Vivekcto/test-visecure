@@ -120,69 +120,35 @@ body {
 /* Media queries for responsive design */
 @media (max-width: 768px) {
     .navbar {
-        justify-content: space-between;
+        display: none; /* Hide the navbar by default */
     }
 
-    .navbar .RES {
-        display: none;
-    }
-
-    .navbar a {
-        margin-left: 1.5rem; /* Adjust spacing for smaller screens */
-    }
-
-    .icons {
+    .header-1 .icons {
         display: flex;
     }
 
-    .icons #menu-icon {
-        display: none;
-    }
-
-    .icons #close-icon {
-        display: block;
-    }
-
-    .navbar {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        height: 0;
-        width: 100%;
-        background-color: rgba(0, 0, 0, 0.8);
-        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.1);
-        overflow: hidden;
-        transition: .3s ease;
-        flex-direction: column;
-    }
-
-    .navbar a {
-        display: block;
-        font-size: 1.1rem;
-        margin: 1rem 0;
-        text-align: center;
-        transform: translateY(-50px);
-        opacity: 0;
-        transition: .3s ease;
+    .header-1 .logo-1 {
+        margin-right: auto; /* Pushes the logo-1 to the left */
     }
 
     #check:checked ~ .navbar {
-        height: auto;
+        display: flex; /* Show the navbar when checkbox is checked (for mobile menu) */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 99;
     }
 
     #check:checked ~ .navbar a {
-        transform: translateY(0);
-        opacity: 1;
-        transition-delay: calc(.15s * var(--i));
-    }
-
-    .navbar .active {
         margin-left: 0;
+        font-size: 1.1rem;
+        margin: 1.5rem 0;
+        text-align: center;
     }
 }
-
-/* Other styles for your specific sections (Home, About Us, Services, etc.) */
-/* Add styles for each section as needed */
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
 *{
