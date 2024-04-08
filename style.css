@@ -121,6 +121,41 @@ body {
 @media (max-width: 768px) {
     .navbar {
         display: none; /* Hide the navbar by default */
+        overflow-y: hidden; /* Hide vertical scrollbar */
+    }
+
+    .header-1 .icons {
+        display: flex;
+    }
+
+    .header-1 .logo-1 {
+        margin-right: auto; /* Pushes the logo-1 to the left */
+    }
+
+    #check:checked ~ .navbar {
+        display: flex; /* Show the navbar when checkbox is checked (for mobile menu) */
+        flex-direction: column;
+        position: absolute;
+        top: 75px; /* Adjust the top position */
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 99;
+        overflow-y: auto; /* Add vertical scrollbar if needed */
+    }
+
+    #check:checked ~ .navbar a {
+        margin-left: 0;
+        font-size: 1.1rem;
+        margin: 1.5rem 0;
+        text-align: center;
+    }
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+    .navbar {
+        display: none; /* Hide the navbar by default */
     }
 
     .header-1 .icons {
